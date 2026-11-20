@@ -9,13 +9,25 @@
   // Mobile menu
   const burger = document.querySelector('.burger');
   const menu = document.querySelector('.menu');
+  const backdrop = document.querySelector('.menu-backdrop');
+  const isOpen = () => menu.classList.contains('open');
   const setMenu = open => {
     menu.classList.toggle('open', open);
     header.classList.toggle('menu-open', open);
+    if (backdrop) backdrop.classList.toggle('show', open);
+    document.body.classList.toggle('menu-locked', open);
     burger.setAttribute('aria-expanded', open);
+    burger.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
   };
-  burger.addEventListener('click', () => setMenu(!menu.classList.contains('open')));
+  burger.addEventListener('click', e => { e.stopPropagation(); setMenu(!isOpen()); });
   menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setMenu(false)));
+  // Close when tapping anywhere outside the menu (including the dimmed backdrop)
+  if (backdrop) backdrop.addEventListener('click', () => setMenu(false));
+  document.addEventListener('click', e => {
+    if (isOpen() && !menu.contains(e.target) && !burger.contains(e.target)) setMenu(false);
+  });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && isOpen()) { setMenu(false); burger.focus(); } });
+  window.addEventListener('resize', () => { if (window.innerWidth > 1000 && isOpen()) setMenu(false); });
 
   // Donation amount chips
   document.querySelectorAll('.amounts').forEach(group => {

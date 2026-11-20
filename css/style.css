@@ -140,7 +140,12 @@ html { scroll-padding-top: 110px; }
 .nav-cta { display: flex; align-items: center; gap: 12px; }
 .nav-cta .btn, .hero-actions .btn { border-radius: var(--radius); }
 .burger { display: none; background: none; border: 0; padding: 8px; }
-.burger span { display: block; width: 24px; height: 2px; background: var(--navy); margin: 5px 0; transition: .3s; }
+.burger span { display: block; width: 24px; height: 2px; border-radius: 2px; background: var(--navy); margin: 5px 0; transition: transform .3s ease, opacity .2s ease; }
+/* Burger turns into an X when the menu is open */
+.burger[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.burger[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+.burger[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+.menu-donate, .menu-backdrop { display: none; }
 
 /* ---------- Hero ---------- */
 .hero { padding: 0; }
@@ -431,13 +436,45 @@ html { scroll-padding-top: 110px; }
 
 /* ---------- Responsive ---------- */
 @media (max-width: 1000px) {
-  .menu, .nav-cta .btn { display: none; }
+  .nav-cta .btn { display: none; }
   .burger { display: block; }
-  .menu.open {
-    display: flex; flex-direction: column; position: absolute; top: calc(100% + 8px); left: 0; right: 0;
-    background: var(--cream); padding: 20px 24px 24px; gap: 16px;
-    border-radius: var(--radius-lg); box-shadow: 0 14px 40px rgba(8, 24, 60, .22);
+
+  /* Mobile dropdown menu */
+  .menu {
+    position: absolute; top: calc(100% + 10px); left: 0; right: 0; z-index: 2;
+    flex-direction: column; gap: 0; padding: 8px 18px 18px;
+    background: var(--cream); border-radius: var(--radius-lg); box-shadow: 0 18px 50px rgba(8, 24, 60, .3);
+    max-height: calc(100svh - 140px); overflow-y: auto;
+    opacity: 0; visibility: hidden; transform: translateY(-10px);
+    transition: opacity .25s ease, transform .25s ease, visibility 0s linear .25s;
   }
+  .menu.open { opacity: 1; visibility: visible; transform: none; transition-delay: 0s; }
+  .menu li a {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 15px 4px; border-bottom: 1px solid var(--line);
+    font-size: 1.02rem; font-weight: 600; color: var(--navy);
+  }
+  .menu li a::after {
+    content: ""; position: static; flex: none; width: 8px; height: 8px; background: none;
+    border-top: 2px solid var(--orange); border-right: 2px solid var(--orange);
+    transform: rotate(45deg); margin-right: 4px; transition: transform .2s;
+  }
+  .menu li a:hover::after { width: 8px; transform: translateX(3px) rotate(45deg); }
+  .menu-donate { display: block; margin-top: 16px; }
+  .menu .menu-donate a {
+    justify-content: center; gap: 10px; padding: 14px; border: 0; color: #fff; border-radius: var(--radius);
+  }
+  .menu .menu-donate a::after { content: none; }
+  .header.scrolled .menu { top: calc(100% + 6px); }
+
+  /* Dimmed backdrop: tapping it closes the menu */
+  .menu-backdrop {
+    display: block; position: fixed; inset: 0; z-index: 1; background: rgba(8, 24, 60, .5);
+    opacity: 0; visibility: hidden; transition: opacity .25s ease, visibility 0s linear .25s;
+  }
+  .menu-backdrop.show { opacity: 1; visibility: visible; transition-delay: 0s; }
+  .site-top .header { z-index: 2; }
+  body.menu-locked { overflow: hidden; }
   .about, .approach, .faq, .impact { grid-template-columns: 1fr; gap: 40px; }
   .about-media .float { left: 16px; bottom: -24px; }
   .grid-3 { grid-template-columns: repeat(2, 1fr); }
