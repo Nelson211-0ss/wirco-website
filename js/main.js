@@ -6,6 +6,22 @@
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
 
+  // Start hero/banner photos just below the blue announcement bar, so no faces sit behind it
+  const topbar = document.querySelector('.topbar');
+  const setTopbarH = () => topbar && document.documentElement.style.setProperty('--topbar-h', topbar.offsetHeight + 'px');
+  setTopbarH();
+  window.addEventListener('resize', setTopbarH);
+
+  // Story filters (Stories page)
+  const filterBtns = document.querySelectorAll('.filter');
+  filterBtns.forEach(btn => btn.addEventListener('click', () => {
+    const cat = btn.dataset.filter;
+    filterBtns.forEach(b => { b.classList.toggle('active', b === btn); b.setAttribute('aria-pressed', b === btn); });
+    document.querySelectorAll('.story[data-cat]').forEach(card => {
+      card.classList.toggle('is-hidden', cat !== 'all' && card.dataset.cat !== cat);
+    });
+  }));
+
   // Mobile menu
   const burger = document.querySelector('.burger');
   const menu = document.querySelector('.menu');
@@ -92,11 +108,6 @@
   // Hero slider
   const slider = document.querySelector('.hero-slider');
   if (slider) {
-    // Start the photos just below the blue announcement bar, so no faces sit behind it
-    const topbar = document.querySelector('.topbar');
-    const setTopbarH = () => topbar && slider.style.setProperty('--topbar-h', topbar.offsetHeight + 'px');
-    setTopbarH();
-    window.addEventListener('resize', setTopbarH);
 
     const bgs = slider.querySelectorAll('.hero-slide');
     const texts = slider.querySelectorAll('.hero-text');
