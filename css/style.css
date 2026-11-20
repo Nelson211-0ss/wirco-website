@@ -117,9 +117,15 @@ html { scroll-padding-top: 110px; }
 }
 
 /* Once the page scrolls, the card stays pinned near the top */
-.header.scrolled { position: fixed; top: 12px; left: 0; right: 0; margin-top: 0; animation: headerIn .35s ease; }
-.header.scrolled .nav { background: rgba(239, 234, 221, .97); backdrop-filter: blur(10px); box-shadow: 0 10px 30px rgba(12, 37, 88, .18); }
-@keyframes headerIn { from { transform: translateY(-140%); } to { transform: none; } }
+/* Once the page scrolls, the card expands into a full-width bar fixed at the top */
+.header.scrolled {
+  position: fixed; top: 0; left: 0; right: 0; margin-top: 0;
+  background: rgba(239, 234, 221, .97); backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line); box-shadow: 0 8px 28px rgba(12, 37, 88, .12);
+  animation: headerIn .35s ease;
+}
+.header.scrolled .nav { background: transparent; box-shadow: none; border-radius: 0; padding: 0; }
+@keyframes headerIn { from { transform: translateY(-100%); } to { transform: none; } }
 
 .brand { display: flex; align-items: center; gap: 12px; }
 .brand img { width: 48px; height: 48px; }
@@ -145,7 +151,7 @@ html { scroll-padding-top: 110px; }
 }
 .hero-card::before {
   content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none;
-  background: linear-gradient(90deg, rgba(8, 24, 60, .85) 0%, rgba(8, 24, 60, .5) 45%, rgba(8, 24, 60, .05) 80%),
+  background: linear-gradient(90deg, rgba(8, 24, 60, .82) 0%, rgba(8, 24, 60, .45) 42%, rgba(8, 24, 60, 0) 72%),
               linear-gradient(0deg, rgba(8, 24, 60, .5), transparent 40%);
 }
 /* Content is centred in the space between the header card and the donation strip */
@@ -159,10 +165,11 @@ html { scroll-padding-top: 110px; }
 .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 30px; }
 
 /* Slider */
-.hero-slides { position: absolute; inset: 0; z-index: 0; }
+.hero-slides { position: absolute; top: var(--topbar-h, 72px); left: 0; right: 0; bottom: 0; z-index: 0; } /* photo starts below the blue bar */
 .hero-slide {
-  position: absolute; inset: 0; background: var(--navy) center/cover no-repeat;
-  opacity: 0; transform: scale(1.08);
+  position: absolute; inset: 0; background: var(--navy) no-repeat;
+  background-size: cover; background-position: var(--focus, center); transform-origin: var(--focus, center);
+  opacity: 0; transform: scale(1.06);
   transition: opacity 1.2s ease, transform 7s ease-out;
 }
 .hero-slide.is-active { opacity: 1; transform: scale(1); }
@@ -440,7 +447,9 @@ html { scroll-padding-top: 110px; }
 @media (max-width: 720px) {
   .section { padding: 68px 0; }
   .hero-card { height: auto; min-height: 100svh; max-height: none; }
-  .hero-card > .wrap { padding: 150px 0 150px; }
+  .hero-card > .wrap { justify-content: flex-end; padding: 150px 0 150px; }
+  .hero-slide { background-position: var(--focus-m, var(--focus, center)); transform-origin: var(--focus-m, var(--focus, center)); }
+  .hero-card::before { background: linear-gradient(0deg, rgba(8, 24, 60, .92) 0%, rgba(8, 24, 60, .7) 42%, rgba(8, 24, 60, .05) 72%); }
   .hero-title { font-size: clamp(2.3rem, 10vw, 3rem); }
   .hero p { font-size: 1rem; }
   .brand-text strong { font-size: 1.35rem; }

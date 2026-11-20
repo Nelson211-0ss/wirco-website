@@ -80,6 +80,12 @@
   // Hero slider
   const slider = document.querySelector('.hero-slider');
   if (slider) {
+    // Start the photos just below the blue announcement bar, so no faces sit behind it
+    const topbar = document.querySelector('.topbar');
+    const setTopbarH = () => topbar && slider.style.setProperty('--topbar-h', topbar.offsetHeight + 'px');
+    setTopbarH();
+    window.addEventListener('resize', setTopbarH);
+
     const bgs = slider.querySelectorAll('.hero-slide');
     const texts = slider.querySelectorAll('.hero-text');
     const dots = slider.querySelectorAll('.hero-dot');
