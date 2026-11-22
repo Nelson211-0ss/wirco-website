@@ -6,6 +6,39 @@
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
 
+  // Logo lockup: stretch the full organisation name to exactly the width of "WIRCO SOUTH SUDAN"
+  const fitBrand = () => {
+    document.querySelectorAll('.brand-text').forEach(box => {
+      const top = box.querySelector('strong');
+      const line = box.querySelector('span');
+      if (!top || !line || line.offsetParent === null) return; // hidden on small phones
+      line.style.fontSize = '';
+      line.style.letterSpacing = '0px';
+      const target = top.getBoundingClientRect().width;
+      let width = line.getBoundingClientRect().width;
+      if (!target || !width) return;
+      // 1) scale the font so the line is close to the target width
+      const size = parseFloat(getComputedStyle(line).fontSize) * (target / width);
+      line.style.fontSize = Math.min(Math.max(size, 7), 13) + 'px';
+      // 2) spread any leftover space evenly between the letters
+      width = line.getBoundingClientRect().width;
+      const gaps = Math.max(line.textContent.length - 1, 1);
+      line.style.letterSpacing = ((target - width) / gaps) + 'px';
+      // letter-spacing also adds space after the last letter; pull it back so both edges line up
+      line.style.marginRight = (-(target - width) / gaps) + 'px';
+    });
+  };
+  fitBrand();
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(fitBrand);
+  if (document.fonts) document.fonts.addEventListener('loadingdone', fitBrand);
+  window.addEventListener('load', fitBrand);
+  window.addEventListener('resize', fitBrand);
+  // Re-fit whenever the top line changes size (e.g. when the web font finishes loading)
+  if ('ResizeObserver' in window) {
+    const ro = new ResizeObserver(() => requestAnimationFrame(fitBrand));
+    document.querySelectorAll('.brand-text strong').forEach(el => ro.observe(el));
+  }
+
   // Start hero/banner photos just below the blue announcement bar, so no faces sit behind it
   const topbar = document.querySelector('.topbar');
   const setTopbarH = () => topbar && document.documentElement.style.setProperty('--topbar-h', topbar.offsetHeight + 'px');
@@ -43,7 +76,7 @@
     if (isOpen() && !menu.contains(e.target) && !burger.contains(e.target)) setMenu(false);
   });
   document.addEventListener('keydown', e => { if (e.key === 'Escape' && isOpen()) { setMenu(false); burger.focus(); } });
-  window.addEventListener('resize', () => { if (window.innerWidth > 1000 && isOpen()) setMenu(false); });
+  window.addEventListener('resize', () => { if (window.innerWidth > 1100 && isOpen()) setMenu(false); });
 
   // Donation amount chips
   document.querySelectorAll('.amounts').forEach(group => {
@@ -83,7 +116,39 @@
     requestAnimationFrame(step);
   };
 
-  // Reveal, bars, progress and counters when in view
+  // ---------- Scroll animations ----------
+  // 1) Tag content blocks so they animate in (no need to mark every element in the HTML)
+  const tag = (selector, ...classes) =>
+    document.querySelectorAll(selector).forEach(el => el.classList.add('reveal', ...classes));
+
+  tag('.section-head');
+  tag('.split-block .split-media');                         // photo slides in from its side (direction set below)
+  tag('.ticks li, .give-list li, .chips .chip, .faq-item, .filters, .result, .stat, .step');
+  tag('.grid-2 > *, .grid-3 > *, .quote-grid > *, .contact-cards > *, .mv-grid > *');
+  tag('.split > div', 'zoom');
+
+  // Two-column blocks: text comes from the opposite side to the photo
+  document.querySelectorAll('.split-block').forEach(block => {
+    const media = block.querySelector('.split-media');
+    const text = [...block.children].find(c => c !== media && !c.matches('form'));
+    const mediaFirst = media && !block.classList.contains('reverse');
+    if (media) media.classList.add(mediaFirst ? 'from-left' : 'from-right');
+    if (text) text.classList.add('reveal', mediaFirst ? 'from-right' : 'from-left');
+  });
+
+  // 2) Photos wipe in
+  document.querySelectorAll('.card-img, .split-media, .about-media, .approach-media, .featured')
+    .forEach(el => el.classList.add('img-reveal'));
+
+  // 3) Stagger items that sit side by side or in a list
+  const staggerGroups = '.grid-2, .grid-3, .steps, .stat-grid, .results, .quote-grid, .contact-cards, .mv-grid, .ticks, .give-list, .chips, .faq > div:last-child, .split';
+  document.querySelectorAll(staggerGroups).forEach(group => {
+    [...group.children].filter(c => c.classList.contains('reveal')).forEach((child, i) => {
+      child.style.setProperty('--d', Math.min(i, 6) * 90 + 'ms');
+    });
+  });
+
+  // 4) Watch everything and animate when it scrolls into view
   const io = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (!entry.isIntersecting) return;
@@ -94,9 +159,12 @@
       if (el.dataset.width) el.style.width = el.dataset.width;
       io.unobserve(el);
     });
-  }, { threshold: 0.2 });
+  }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
 
-  document.querySelectorAll('.reveal, [data-count], [data-height], [data-width]').forEach(el => io.observe(el));
+  document.querySelectorAll('.reveal, .img-reveal, .mark, [data-count], [data-height], [data-width]').forEach(el => io.observe(el));
+
+  // Page banners and hero animate on load
+  requestAnimationFrame(() => document.documentElement.classList.add('is-loaded'));
 
   // Duplicate testimonials for a seamless loop
   const track = document.querySelector('.track');
