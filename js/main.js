@@ -76,7 +76,29 @@
     if (isOpen() && !menu.contains(e.target) && !burger.contains(e.target)) setMenu(false);
   });
   document.addEventListener('keydown', e => { if (e.key === 'Escape' && isOpen()) { setMenu(false); burger.focus(); } });
-  window.addEventListener('resize', () => { if (window.innerWidth > 1100 && isOpen()) setMenu(false); });
+  window.addEventListener('resize', () => { if (window.innerWidth > 1200 && isOpen()) setMenu(false); });
+
+  // Mega menus
+  // Phones/tablets: the arrow button next to Programs / Get involved expands its links
+  document.querySelectorAll('.has-mega').forEach(item => {
+    const toggle = item.querySelector('.sub-toggle');
+    if (!toggle) return;
+    toggle.addEventListener('click', e => {
+      e.stopPropagation();
+      const open = !item.classList.contains('sub-open');
+      document.querySelectorAll('.has-mega.sub-open').forEach(o => {
+        if (o !== item) { o.classList.remove('sub-open'); o.querySelector('.sub-toggle').setAttribute('aria-expanded', 'false'); }
+      });
+      item.classList.toggle('sub-open', open);
+      toggle.setAttribute('aria-expanded', open);
+    });
+  });
+  // Desktop: Escape closes an open mega panel (when opened with the keyboard)
+  document.addEventListener('keydown', e => {
+    if (e.key !== 'Escape') return;
+    const openMega = document.activeElement && document.activeElement.closest('.has-mega');
+    if (openMega && window.innerWidth > 1200) document.activeElement.blur(); // panel closes when focus leaves it
+  });
 
   // Donation amount chips
   document.querySelectorAll('.amounts').forEach(group => {

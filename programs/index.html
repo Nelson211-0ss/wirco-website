@@ -4,13 +4,13 @@
   <meta charset="UTF-8">
   <script>document.documentElement.classList.add('js')</script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Impact | WIRCO – Women-Led Initiative for Resilient Communities</title>
-  <meta name="description" content="The results of WIRCO's work with women, girls and communities across South Sudan.">
-  <link rel="icon" type="image/png" href="images/favicon.png">
+  <title>Programs | WIRCO – Women-Led Initiative for Resilient Communities</title>
+  <meta name="description" content="WIRCO's programs in livelihoods, peacebuilding, girls' education and protection for women and girls in South Sudan.">
+  <link rel="icon" type="image/png" href="../images/favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
 
@@ -46,6 +46,7 @@
       <symbol id="i-chart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 6-6"/></symbol>
       <symbol id="i-globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"/></symbol>
       <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></symbol>
+      <symbol id="i-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></symbol>
     </defs>
   </svg>
 
@@ -71,21 +72,68 @@
   <!-- Header -->
   <header class="header">
     <nav class="wrap nav" aria-label="Main">
-      <a href="index.html" class="brand" aria-label="WIRCO home">
-        <img src="images/logo.png" alt="WIRCO South Sudan emblem: a dove over a globe, held by an open hand">
+      <a href="../" class="brand" aria-label="WIRCO home">
+        <img src="../images/logo.png" alt="WIRCO South Sudan emblem: a dove over a globe, held by an open hand">
         <span class="brand-text"><strong>WIRCO <em>South Sudan</em></strong><span>Women-Led Initiative for Resilient Communities</span></span>
       </a>
       <ul class="menu" id="menu">
-        <li><a href="about.html">About</a></li>
-        <li><a href="programs.html">Programs</a></li>
-        <li><a href="impact.html" aria-current="page">Impact</a></li>
-        <li><a href="stories.html">Stories</a></li>
-        <li><a href="get-involved.html">Get involved</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li class="menu-donate"><a href="get-involved.html#donate" class="btn btn-orange">Donate now <svg><use href="#i-arrow"/></svg></a></li>
+        <li><a href="../">Home</a></li>
+        <li><a href="../about/">About</a></li>
+        <li class="has-mega">
+          <a href="../programs/" class="mega-trigger" aria-current="page">Programs <svg class="chev" aria-hidden="true"><use href="#i-chev"/></svg></a>
+          <button class="sub-toggle" type="button" aria-expanded="false" aria-label="Show Programs links"><svg aria-hidden="true"><use href="#i-chev"/></svg></button>
+          <div class="mega">
+            <div class="mega-inner">
+              <div class="mega-intro">
+                <span class="eyebrow">Programs</span>
+                <h4>Programs designed to empower</h4>
+                <p>Four connected programs that help women and girls withstand shocks and lead change.</p>
+                <a href="../programs/" class="mega-all">All programs <svg><use href="#i-arrow"/></svg></a>
+              </div>
+              <ul class="mega-links">
+              <li><a href="../programs/#livelihoods"><span class="icon"><svg><use href="#i-coins"/></svg></span><span><strong>Livelihoods &amp; savings</strong><small>Savings groups, small business and farming</small></span></a></li>
+              <li><a href="../programs/#peace"><span class="icon"><svg><use href="#i-dove"/></svg></span><span><strong>Peacebuilding &amp; dialogue</strong><small>Women mediators and peace committees</small></span></a></li>
+              <li><a href="../programs/#education"><span class="icon"><svg><use href="#i-book"/></svg></span><span><strong>Girls' education &amp; skills</strong><small>School support and practical trades</small></span></a></li>
+              <li><a href="../programs/#protection"><span class="icon"><svg><use href="#i-shield"/></svg></span><span><strong>Protection &amp; health</strong><small>Safety, care and mother-and-child health</small></span></a></li>
+              </ul>
+              <a href="../get-involved/#campaigns" class="mega-feature">
+                <img src="../images/campaign-water.jpg" alt="" loading="lazy">
+                <span class="mega-feature-text"><small>Current campaign</small><strong>Clean water for 5 villages</strong><span>Support this appeal <svg><use href="#i-arrow"/></svg></span></span>
+              </a>
+            </div>
+          </div>
+        </li>
+        <li><a href="../impact/">Impact</a></li>
+        <li><a href="../stories/">Stories</a></li>
+        <li class="has-mega">
+          <a href="../get-involved/" class="mega-trigger">Get involved <svg class="chev" aria-hidden="true"><use href="#i-chev"/></svg></a>
+          <button class="sub-toggle" type="button" aria-expanded="false" aria-label="Show Get involved links"><svg aria-hidden="true"><use href="#i-chev"/></svg></button>
+          <div class="mega">
+            <div class="mega-inner">
+              <div class="mega-intro">
+                <span class="eyebrow">Get involved</span>
+                <h4>Stand with the women of South Sudan</h4>
+                <p>Give, volunteer, fundraise or partner with us. Every action counts.</p>
+                <a href="../get-involved/" class="mega-all">All ways to help <svg><use href="#i-arrow"/></svg></a>
+              </div>
+              <ul class="mega-links">
+              <li><a href="../get-involved/#donate"><span class="icon"><svg><use href="#i-heart"/></svg></span><span><strong>Donate</strong><small>One-time or monthly gifts</small></span></a></li>
+              <li><a href="../get-involved/#donate"><span class="icon"><svg><use href="#i-girl"/></svg></span><span><strong>Sponsor a girl</strong><small>A year of school for one girl</small></span></a></li>
+              <li><a href="../get-involved/#volunteer"><span class="icon"><svg><use href="#i-users"/></svg></span><span><strong>Volunteer</strong><small>Share your skills, locally or remotely</small></span></a></li>
+              <li><a href="../get-involved/#partner"><span class="icon"><svg><use href="#i-hand"/></svg></span><span><strong>Partner with us</strong><small>NGOs, funders and businesses</small></span></a></li>
+              </ul>
+              <a href="../get-involved/#donate" class="mega-feature">
+                <img src="../images/flood-response.jpg" alt="" loading="lazy">
+                <span class="mega-feature-text"><small>Emergency appeal</small><strong>Flood response along the Nile</strong><span>Support this appeal <svg><use href="#i-arrow"/></svg></span></span>
+              </a>
+            </div>
+          </div>
+        </li>
+        <li><a href="../contact/">Contact</a></li>
+        <li class="menu-donate"><a href="../get-involved/#donate" class="btn btn-orange">Donate now <svg><use href="#i-arrow"/></svg></a></li>
       </ul>
       <div class="nav-cta">
-        <a href="get-involved.html#donate" class="btn btn-orange btn-sm">Donate now <svg><use href="#i-arrow"/></svg></a>
+        <a href="../get-involved/#donate" class="btn btn-orange btn-sm">Donate now <svg><use href="#i-arrow"/></svg></a>
         <button class="burger" aria-label="Open menu" aria-controls="menu" aria-expanded="false"><span></span><span></span><span></span></button>
       </div>
     </nav>
@@ -95,112 +143,82 @@
 
   <main id="top">
     <section class="page-hero">
-      <div class="page-hero-bg" style="background-image:url('images/hero-2-together.jpg'); --focus:50% 25%;" role="img" aria-hidden="true"></div>
+      <div class="page-hero-bg" style="background-image:url('../images/page-programs.jpg'); --focus:50% 35%;" role="img" aria-hidden="true"></div>
       <div class="wrap on-dark">
-        <nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Home</a><span aria-hidden="true">/</span><span>Impact</span></nav>
-        <h1>Real change, <span class="mark">measured</span></h1>
-        <p>Every number below is a woman earning her own income, a girl back in class or a village choosing dialogue over violence.</p>
+        <nav class="crumbs" aria-label="Breadcrumb"><a href="../">Home</a><span aria-hidden="true">/</span><span>Programs</span></nav>
+        <h1>Programs designed to <span class="mark">empower</span></h1>
+        <p>Four connected programs help women and girls withstand shocks, rebuild their lives and lead change in their communities.</p>
       </div>
     </section>
 
-    <!-- NOTE: All figures on this page are placeholders. Replace them with WIRCO's verified data. -->
     <section class="section">
       <div class="wrap">
-        <div class="stat-band reveal">
-          <div class="stat-grid">
-            <div class="stat"><strong data-count="14250" data-suffix="+">0</strong><span>People reached through our programs</span></div>
-            <div class="stat"><strong data-count="850" data-suffix="+">0</strong><span>Women running their own businesses</span></div>
-            <div class="stat"><strong data-count="2100" data-suffix="+">0</strong><span>Girls supported to stay in school</span></div>
-            <div class="stat"><strong data-count="5600" data-suffix="+">0</strong><span>Households reached with emergency relief</span></div>
-          </div>
+      <div class="split-block" id="livelihoods">
+        <div class="split-media reveal">
+          <img src="../images/program-livelihoods.jpg" alt="Women selling goods at a small market stall" loading="lazy">
+          <span class="tag">Program 01</span>
+        </div>
+        <div class="reveal">
+          <span class="eyebrow">Livelihoods &amp; savings groups</span>
+          <h2>Income that <span class="mark">women control</span></h2>
+          <p class="lead">We help women save, borrow and grow small businesses so they can feed their families, pay school fees and cope with shocks.</p>
+          <ul class="ticks"><li>Village savings and loan associations run by women</li><li>Business skills, bookkeeping and market linkages</li><li>Climate-smart farming, seeds and tools</li><li>Start-up grants for women-led enterprises</li></ul>
+          <div class="figure"><strong>120</strong><span>savings groups supported</span></div>
         </div>
       </div>
-    </section>
-
-    <section class="section" style="padding-top:0">
-      <div class="wrap split-block">
+      <div class="split-block reverse" id="peace">
+        <div class="split-media reveal">
+          <img src="../images/program-peacebuilding.jpg" alt="Women and children gathered for a community dialogue" loading="lazy">
+          <span class="tag">Program 02</span>
+        </div>
         <div class="reveal">
-          <span class="eyebrow">Results by program</span>
-          <h2>Progress toward <span class="mark">this year's goals</span></h2>
-          <p class="lead">We set targets with the communities we serve and track them together through the year.</p>
-          <a href="programs.html" class="btn btn-navy">See our programs <svg><use href="#i-arrow"/></svg></a>
+          <span class="eyebrow">Peacebuilding &amp; dialogue</span>
+          <h2>Women at the <span class="mark">peace table</span></h2>
+          <p class="lead">We train women as mediators and support peace committees that resolve disputes over land, cattle and resources before they turn violent.</p>
+          <ul class="ticks"><li>Women mediators and community peace committees</li><li>Dialogues between youth, elders and leaders</li><li>Early warning of local tensions</li><li>Trauma healing and social cohesion activities</li></ul>
+          <div class="figure"><strong>45</strong><span>peace committees active</span></div>
         </div>
-        <div class="results">
-          <div class="result reveal">
-            <span class="icon"><svg><use href="#i-coins"/></svg></span>
-            <div>
-              <h3>Savings groups formed</h3>
-              <p style="margin:0;color:var(--muted);font-size:.9rem">Women-run savings and loan groups</p>
-              <div class="progress"><i data-width="80%"></i></div>
-              <div class="progress-meta"><span>Reached <b>120</b></span><span>Target <b>150</b></span></div>
-            </div>
-          </div>
-          <div class="result reveal">
-            <span class="icon"><svg><use href="#i-dove"/></svg></span>
-            <div>
-              <h3>Peace committees active</h3>
-              <p style="margin:0;color:var(--muted);font-size:.9rem">Trained women mediators in villages</p>
-              <div class="progress"><i data-width="75%"></i></div>
-              <div class="progress-meta"><span>Reached <b>45</b></span><span>Target <b>60</b></span></div>
-            </div>
-          </div>
-          <div class="result reveal">
-            <span class="icon"><svg><use href="#i-book"/></svg></span>
-            <div>
-              <h3>Girls supported in school</h3>
-              <p style="margin:0;color:var(--muted);font-size:.9rem">Fees, kits and mentoring</p>
-              <div class="progress"><i data-width="70%"></i></div>
-              <div class="progress-meta"><span>Reached <b>2,100</b></span><span>Target <b>3,000</b></span></div>
-            </div>
-          </div>
-          <div class="result reveal">
-            <span class="icon"><svg><use href="#i-shield"/></svg></span>
-            <div>
-              <h3>Women reached with protection services</h3>
-              <p style="margin:0;color:var(--muted);font-size:.9rem">Referrals, awareness and support groups</p>
-              <div class="progress"><i data-width="76%"></i></div>
-              <div class="progress-meta"><span>Reached <b>3,800</b></span><span>Target <b>5,000</b></span></div>
-            </div>
-          </div>
+      </div>
+      <div class="split-block" id="education">
+        <div class="split-media reveal">
+          <img src="../images/program-skills.jpg" alt="A young woman repairing electronics at a training workshop" loading="lazy">
+          <span class="tag">Program 03</span>
         </div>
+        <div class="reveal">
+          <span class="eyebrow">Girls' education &amp; skills</span>
+          <h2>Keeping girls in <span class="mark">school</span></h2>
+          <p class="lead">We remove the barriers that push girls out of school and give young women practical skills that lead to work.</p>
+          <ul class="ticks"><li>School fees, uniforms, books and dignity kits</li><li>Mentoring and girls' clubs</li><li>Vocational training in tailoring, solar and phone repair</li><li>Family outreach to support girls' education</li></ul>
+          <div class="figure"><strong>2,100</strong><span>girls supported</span></div>
+        </div>
+      </div>
+      <div class="split-block reverse" id="protection">
+        <div class="split-media reveal">
+          <img src="../images/program-health.jpg" alt="A mother holding her child while waiting at a health facility" loading="lazy">
+          <span class="tag">Program 04</span>
+        </div>
+        <div class="reveal">
+          <span class="eyebrow">Protection &amp; health</span>
+          <h2>Safety, care and <span class="mark">dignity</span></h2>
+          <p class="lead">We help survivors of gender-based violence get support and work with communities to prevent violence and improve mothers' and children's health.</p>
+          <ul class="ticks"><li>Safe referral to health, legal and psychosocial services</li><li>Community awareness on preventing violence</li><li>Maternal and child health and nutrition sessions</li><li>Women-friendly spaces and support groups</li></ul>
+          <div class="figure"><strong>3,800</strong><span>women reached</span></div>
+        </div>
+      </div>
       </div>
     </section>
 
     <section class="section section-alt">
       <div class="wrap">
         <div class="section-head">
-          <span class="eyebrow">How we measure</span>
-          <h2>Honest numbers, <span class="mark">shared openly</span></h2>
-          <p class="lead">We count what matters to women and communities, and we report back to them as well as to our donors.</p>
+          <span class="eyebrow">Across all programs</span>
+          <h2>Themes that run <span class="mark">through everything</span></h2>
+          <p class="lead">These priorities shape how every WIRCO program is designed and delivered.</p>
         </div>
-        <div class="steps">
-          <div class="step reveal"><h3>Baseline</h3><p>We record where families start: income, schooling, safety and wellbeing.</p></div>
-          <div class="step reveal"><h3>Track</h3><p>Women's groups keep their own records, checked by our field staff.</p></div>
-          <div class="step reveal"><h3>Listen</h3><p>Regular feedback sessions tell us what is working and what is not.</p></div>
-          <div class="step reveal"><h3>Report</h3><p>We share results with communities, partners and donors every year.</p></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="wrap">
-        <div class="section-head">
-          <span class="eyebrow">In their words</span>
-          <h2>What women <span class="mark">tell us</span></h2>
-        </div>
-        <!-- NOTE: Example testimonials. Replace with real quotes, used with each person's consent. -->
-        <div class="quote-grid">
-          <figure class="quote-card reveal"><blockquote>Our savings group gave me my first loan. Today my tea stall pays my children's school fees.</blockquote><cite>Achol N.</cite><small>Savings group member, Bor</small></figure>
-          <figure class="quote-card reveal"><blockquote>Before, the women only listened. Now the chief asks the peace committee to help settle disputes.</blockquote><cite>Mary L.</cite><small>Peace committee chair, Torit</small></figure>
-          <figure class="quote-card reveal"><blockquote>I left school when the floods came. WIRCO paid my fees and now I am in Senior Three.</blockquote><cite>Nyakuoth K.</cite><small>Student, Malakal</small></figure>
-        </div>
-        <div class="report reveal" style="margin-top:48px">
-          <div>
-            <h3>Annual report</h3>
-            <p>Our full results, finances and plans for the year ahead.</p>
-          </div>
-          <!-- TODO: link to the annual report PDF -->
-          <a href="contact.html" class="btn btn-orange"><svg><use href="#i-download"/></svg> Request the report</a>
+        <div class="grid-3" style="margin-top:0">
+          <div class="way reveal"><span class="icon"><svg><use href="#i-sprout"/></svg></span><h3>Climate resilience</h3><p>Preparing families for floods and drought with better farming, savings and early action.</p></div>
+          <div class="way reveal"><span class="icon"><svg><use href="#i-users"/></svg></span><h3>Inclusion</h3><p>Reaching women with disabilities, widows, displaced women and young mothers.</p></div>
+          <div class="way reveal"><span class="icon"><svg><use href="#i-flag"/></svg></span><h3>Emergency response</h3><p>Food, water and shelter support when crises hit the communities we serve.</p></div>
         </div>
       </div>
     </section>
@@ -210,9 +228,9 @@
         <div class="cta reveal">
           <svg class="deco a"><use href="#i-star"/></svg>
           <svg class="deco b"><use href="#i-star"/></svg>
-          <h2>Be part of the<br><span class="mark">next result</span></h2>
-          <p class="lead">Every gift is counted, tracked and reported back to you.</p>
-          <a href="get-involved.html#donate" class="btn btn-orange">Donate now <svg><use href="#i-arrow"/></svg></a>
+          <h2>Help us reach<br><span class="mark">more women</span></h2>
+          <p class="lead">Choose a program to support, or give where the need is greatest.</p>
+          <a href="../get-involved/#donate" class="btn btn-orange">Donate now <svg><use href="#i-arrow"/></svg></a>
         </div>
       </div>
     </section>
@@ -237,8 +255,8 @@
 
       <div class="footer-main">
         <div class="footer-about">
-          <a href="index.html" class="footer-logo">
-            <img src="images/logo.png" alt="WIRCO emblem">
+          <a href="../" class="footer-logo">
+            <img src="../images/logo.png" alt="WIRCO emblem">
             <span><strong>WIRCO</strong><small>Women-Led Initiative for Resilient Communities<br>South Sudan</small></span>
           </a>
           <p>The Women-Led Initiative for Resilient Communities (WIRCO) is a women-led organisation building peace, livelihoods, education and protection so that communities in South Sudan can withstand shocks and thrive.</p>
@@ -253,22 +271,22 @@
         <nav class="footer-col" aria-label="Explore">
           <h5>Explore</h5>
           <ul>
-            <li><a href="about.html">About us</a></li>
-            <li><a href="programs.html">Our programs</a></li>
-            <li><a href="impact.html">Impact</a></li>
-            <li><a href="stories.html">Stories</a></li>
-            <li><a href="contact.html#faq">FAQ</a></li>
+            <li><a href="../about/">About us</a></li>
+            <li><a href="../programs/">Our programs</a></li>
+            <li><a href="../impact/">Impact</a></li>
+            <li><a href="../stories/">Stories</a></li>
+            <li><a href="../contact/#faq">FAQ</a></li>
           </ul>
         </nav>
 
         <nav class="footer-col" aria-label="Get involved">
           <h5>Get involved</h5>
           <ul>
-            <li><a href="get-involved.html#donate">Donate</a></li>
-            <li><a href="get-involved.html#campaigns">Campaigns</a></li>
-            <li><a href="get-involved.html#volunteer">Volunteer</a></li>
-            <li><a href="get-involved.html#donate">Sponsor a girl</a></li>
-            <li><a href="get-involved.html#partner">Partner with us</a></li>
+            <li><a href="../get-involved/#donate">Donate</a></li>
+            <li><a href="../get-involved/#campaigns">Campaigns</a></li>
+            <li><a href="../get-involved/#volunteer">Volunteer</a></li>
+            <li><a href="../get-involved/#donate">Sponsor a girl</a></li>
+            <li><a href="../get-involved/#partner">Partner with us</a></li>
           </ul>
         </nav>
 
@@ -280,7 +298,7 @@
             <li><span class="ci"><svg><use href="#i-mail"/></svg></span><a href="mailto:info@wirco.org">info@wirco.org</a></li>
             <li><span class="ci"><svg><use href="#i-phone"/></svg></span><a href="tel:+211000000000">+211 000 000 000</a></li>
           </ul>
-          <a href="get-involved.html#donate" class="btn btn-orange btn-sm footer-donate-btn">Donate now <svg><use href="#i-arrow"/></svg></a>
+          <a href="../get-involved/#donate" class="btn btn-orange btn-sm footer-donate-btn">Donate now <svg><use href="#i-arrow"/></svg></a>
         </div>
       </div>
 
@@ -288,13 +306,13 @@
         <span>&copy; <span id="year">2026</span> WIRCO &ndash; Women-Led Initiative for Resilient Communities. All rights reserved.</span>
         <div class="footer-bottom-links">
           <a href="#">Privacy policy</a>
-          <a href="credits.html">Photo credits</a>
+          <a href="../credits/">Photo credits</a>
           <a href="#" class="to-top" aria-label="Back to top"><svg><use href="#i-up"/></svg></a>
         </div>
       </div>
     </div>
   </footer>
 
-  <script src="js/main.js"></script>
+  <script src="../js/main.js"></script>
 </body>
 </html>

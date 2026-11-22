@@ -46,6 +46,7 @@
       <symbol id="i-chart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 6-6"/></symbol>
       <symbol id="i-globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"/></symbol>
       <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></symbol>
+      <symbol id="i-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></symbol>
     </defs>
   </svg>
 
@@ -71,21 +72,68 @@
   <!-- Header -->
   <header class="header">
     <nav class="wrap nav" aria-label="Main">
-      <a href="index.html" class="brand" aria-label="WIRCO home">
+      <a href="./" class="brand" aria-label="WIRCO home">
         <img src="images/logo.png" alt="WIRCO South Sudan emblem: a dove over a globe, held by an open hand">
         <span class="brand-text"><strong>WIRCO <em>South Sudan</em></strong><span>Women-Led Initiative for Resilient Communities</span></span>
       </a>
       <ul class="menu" id="menu">
-        <li><a href="about.html">About</a></li>
-        <li><a href="programs.html">Programs</a></li>
-        <li><a href="impact.html">Impact</a></li>
-        <li><a href="stories.html">Stories</a></li>
-        <li><a href="get-involved.html">Get involved</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li class="menu-donate"><a href="get-involved.html#donate" class="btn btn-orange">Donate now <svg><use href="#i-arrow"/></svg></a></li>
+        <li><a href="./" aria-current="page">Home</a></li>
+        <li><a href="about/">About</a></li>
+        <li class="has-mega">
+          <a href="programs/" class="mega-trigger">Programs <svg class="chev" aria-hidden="true"><use href="#i-chev"/></svg></a>
+          <button class="sub-toggle" type="button" aria-expanded="false" aria-label="Show Programs links"><svg aria-hidden="true"><use href="#i-chev"/></svg></button>
+          <div class="mega">
+            <div class="mega-inner">
+              <div class="mega-intro">
+                <span class="eyebrow">Programs</span>
+                <h4>Programs designed to empower</h4>
+                <p>Four connected programs that help women and girls withstand shocks and lead change.</p>
+                <a href="programs/" class="mega-all">All programs <svg><use href="#i-arrow"/></svg></a>
+              </div>
+              <ul class="mega-links">
+              <li><a href="programs/#livelihoods"><span class="icon"><svg><use href="#i-coins"/></svg></span><span><strong>Livelihoods &amp; savings</strong><small>Savings groups, small business and farming</small></span></a></li>
+              <li><a href="programs/#peace"><span class="icon"><svg><use href="#i-dove"/></svg></span><span><strong>Peacebuilding &amp; dialogue</strong><small>Women mediators and peace committees</small></span></a></li>
+              <li><a href="programs/#education"><span class="icon"><svg><use href="#i-book"/></svg></span><span><strong>Girls' education &amp; skills</strong><small>School support and practical trades</small></span></a></li>
+              <li><a href="programs/#protection"><span class="icon"><svg><use href="#i-shield"/></svg></span><span><strong>Protection &amp; health</strong><small>Safety, care and mother-and-child health</small></span></a></li>
+              </ul>
+              <a href="get-involved/#campaigns" class="mega-feature">
+                <img src="images/campaign-water.jpg" alt="" loading="lazy">
+                <span class="mega-feature-text"><small>Current campaign</small><strong>Clean water for 5 villages</strong><span>Support this appeal <svg><use href="#i-arrow"/></svg></span></span>
+              </a>
+            </div>
+          </div>
+        </li>
+        <li><a href="impact/">Impact</a></li>
+        <li><a href="stories/">Stories</a></li>
+        <li class="has-mega">
+          <a href="get-involved/" class="mega-trigger">Get involved <svg class="chev" aria-hidden="true"><use href="#i-chev"/></svg></a>
+          <button class="sub-toggle" type="button" aria-expanded="false" aria-label="Show Get involved links"><svg aria-hidden="true"><use href="#i-chev"/></svg></button>
+          <div class="mega">
+            <div class="mega-inner">
+              <div class="mega-intro">
+                <span class="eyebrow">Get involved</span>
+                <h4>Stand with the women of South Sudan</h4>
+                <p>Give, volunteer, fundraise or partner with us. Every action counts.</p>
+                <a href="get-involved/" class="mega-all">All ways to help <svg><use href="#i-arrow"/></svg></a>
+              </div>
+              <ul class="mega-links">
+              <li><a href="get-involved/#donate"><span class="icon"><svg><use href="#i-heart"/></svg></span><span><strong>Donate</strong><small>One-time or monthly gifts</small></span></a></li>
+              <li><a href="get-involved/#donate"><span class="icon"><svg><use href="#i-girl"/></svg></span><span><strong>Sponsor a girl</strong><small>A year of school for one girl</small></span></a></li>
+              <li><a href="get-involved/#volunteer"><span class="icon"><svg><use href="#i-users"/></svg></span><span><strong>Volunteer</strong><small>Share your skills, locally or remotely</small></span></a></li>
+              <li><a href="get-involved/#partner"><span class="icon"><svg><use href="#i-hand"/></svg></span><span><strong>Partner with us</strong><small>NGOs, funders and businesses</small></span></a></li>
+              </ul>
+              <a href="get-involved/#donate" class="mega-feature">
+                <img src="images/flood-response.jpg" alt="" loading="lazy">
+                <span class="mega-feature-text"><small>Emergency appeal</small><strong>Flood response along the Nile</strong><span>Support this appeal <svg><use href="#i-arrow"/></svg></span></span>
+              </a>
+            </div>
+          </div>
+        </li>
+        <li><a href="contact/">Contact</a></li>
+        <li class="menu-donate"><a href="get-involved/#donate" class="btn btn-orange">Donate now <svg><use href="#i-arrow"/></svg></a></li>
       </ul>
       <div class="nav-cta">
-        <a href="get-involved.html#donate" class="btn btn-orange btn-sm">Donate now <svg><use href="#i-arrow"/></svg></a>
+        <a href="get-involved/#donate" class="btn btn-orange btn-sm">Donate now <svg><use href="#i-arrow"/></svg></a>
         <button class="burger" aria-label="Open menu" aria-controls="menu" aria-expanded="false"><span></span><span></span><span></span></button>
       </div>
     </nav>
@@ -160,7 +208,7 @@
               <button class="amount">Other</button>
             </div>
             <small>$25 provides seeds and tools for one woman farmer for a full season.</small>
-            <a href="get-involved.html#donate" class="btn btn-orange btn-sm">Give now <svg><use href="#i-arrow"/></svg></a>
+            <a href="get-involved/#donate" class="btn btn-orange btn-sm">Give now <svg><use href="#i-arrow"/></svg></a>
           </div>
         </div>
       </div>
@@ -178,7 +226,7 @@
             <li>Long-term support, not one-off handouts</li>
             <li>Bringing communities together across ethnic and generational lines</li>
           </ul>
-          <a href="programs.html" class="btn btn-navy">What we do <svg><use href="#i-arrow"/></svg></a>
+          <a href="programs/" class="btn btn-navy">What we do <svg><use href="#i-arrow"/></svg></a>
         </div>
         <div class="about-media reveal">
           <img src="images/women-market-gathering.jpg" alt="Women gathered under a tree preparing fresh vegetables for market">
@@ -260,11 +308,11 @@
         <p class="lead">Whether you are in Juba or abroad, there is a way to stand with the women of South Sudan.</p>
         <div class="grid-3">
           <div class="way reveal"><span class="icon"><svg><use href="#i-heart"/></svg></span><h3>Make a donation</h3><p>One-off or monthly gifts go straight into community programs.</p><a href="#donate">Donate →</a></div>
-          <div class="way reveal"><span class="icon"><svg><use href="#i-users"/></svg></span><h3>Become a volunteer</h3><p>Share your skills in training, health, finance or communications.</p><a href="get-involved.html#volunteer">Join us →</a></div>
-          <div class="way reveal"><span class="icon"><svg><use href="#i-girl"/></svg></span><h3>Sponsor a girl</h3><p>Pay one girl's school fees, uniform and sanitary kit for a year.</p><a href="get-involved.html#donate">Sponsor →</a></div>
-          <div class="way reveal"><span class="icon"><svg><use href="#i-flag"/></svg></span><h3>Start a fundraiser</h3><p>Run, walk, bake or celebrate a birthday for WIRCO.</p><a href="contact.html">Start one →</a></div>
-          <div class="way reveal"><span class="icon"><svg><use href="#i-share"/></svg></span><h3>Share our story</h3><p>Follow us and help amplify South Sudanese women's voices.</p><a href="stories.html">Follow →</a></div>
-          <div class="way reveal"><span class="icon"><svg><use href="#i-hand"/></svg></span><h3>Partner with us</h3><p>NGOs, donors and businesses: let's design programs together.</p><a href="get-involved.html#partner">Partner →</a></div>
+          <div class="way reveal"><span class="icon"><svg><use href="#i-users"/></svg></span><h3>Become a volunteer</h3><p>Share your skills in training, health, finance or communications.</p><a href="get-involved/#volunteer">Join us →</a></div>
+          <div class="way reveal"><span class="icon"><svg><use href="#i-girl"/></svg></span><h3>Sponsor a girl</h3><p>Pay one girl's school fees, uniform and sanitary kit for a year.</p><a href="get-involved/#donate">Sponsor →</a></div>
+          <div class="way reveal"><span class="icon"><svg><use href="#i-flag"/></svg></span><h3>Start a fundraiser</h3><p>Run, walk, bake or celebrate a birthday for WIRCO.</p><a href="contact/">Start one →</a></div>
+          <div class="way reveal"><span class="icon"><svg><use href="#i-share"/></svg></span><h3>Share our story</h3><p>Follow us and help amplify South Sudanese women's voices.</p><a href="stories/">Follow →</a></div>
+          <div class="way reveal"><span class="icon"><svg><use href="#i-hand"/></svg></span><h3>Partner with us</h3><p>NGOs, donors and businesses: let's design programs together.</p><a href="get-involved/#partner">Partner →</a></div>
         </div>
       </div>
     </section>
@@ -406,7 +454,7 @@
           <span class="eyebrow">FAQ</span>
           <h2>Questions<br>and <span class="mark">answers</span></h2>
           <p class="lead">Can't find what you're looking for? Write to us and our team will reply.</p>
-          <a href="contact.html" class="btn btn-navy">Contact us <svg><use href="#i-arrow"/></svg></a>
+          <a href="contact/" class="btn btn-navy">Contact us <svg><use href="#i-arrow"/></svg></a>
         </div>
         <div class="reveal">
           <div class="faq-item open">
@@ -465,7 +513,7 @@
 
       <div class="footer-main">
         <div class="footer-about">
-          <a href="index.html" class="footer-logo">
+          <a href="./" class="footer-logo">
             <img src="images/logo.png" alt="WIRCO emblem">
             <span><strong>WIRCO</strong><small>Women-Led Initiative for Resilient Communities<br>South Sudan</small></span>
           </a>
@@ -481,22 +529,22 @@
         <nav class="footer-col" aria-label="Explore">
           <h5>Explore</h5>
           <ul>
-            <li><a href="about.html">About us</a></li>
-            <li><a href="programs.html">Our programs</a></li>
-            <li><a href="impact.html">Impact</a></li>
-            <li><a href="stories.html">Stories</a></li>
-            <li><a href="contact.html#faq">FAQ</a></li>
+            <li><a href="about/">About us</a></li>
+            <li><a href="programs/">Our programs</a></li>
+            <li><a href="impact/">Impact</a></li>
+            <li><a href="stories/">Stories</a></li>
+            <li><a href="contact/#faq">FAQ</a></li>
           </ul>
         </nav>
 
         <nav class="footer-col" aria-label="Get involved">
           <h5>Get involved</h5>
           <ul>
-            <li><a href="get-involved.html#donate">Donate</a></li>
-            <li><a href="get-involved.html#campaigns">Campaigns</a></li>
-            <li><a href="get-involved.html#volunteer">Volunteer</a></li>
-            <li><a href="get-involved.html#donate">Sponsor a girl</a></li>
-            <li><a href="get-involved.html#partner">Partner with us</a></li>
+            <li><a href="get-involved/#donate">Donate</a></li>
+            <li><a href="get-involved/#campaigns">Campaigns</a></li>
+            <li><a href="get-involved/#volunteer">Volunteer</a></li>
+            <li><a href="get-involved/#donate">Sponsor a girl</a></li>
+            <li><a href="get-involved/#partner">Partner with us</a></li>
           </ul>
         </nav>
 
@@ -508,7 +556,7 @@
             <li><span class="ci"><svg><use href="#i-mail"/></svg></span><a href="mailto:info@wirco.org">info@wirco.org</a></li>
             <li><span class="ci"><svg><use href="#i-phone"/></svg></span><a href="tel:+211000000000">+211 000 000 000</a></li>
           </ul>
-          <a href="get-involved.html#donate" class="btn btn-orange btn-sm footer-donate-btn">Donate now <svg><use href="#i-arrow"/></svg></a>
+          <a href="get-involved/#donate" class="btn btn-orange btn-sm footer-donate-btn">Donate now <svg><use href="#i-arrow"/></svg></a>
         </div>
       </div>
 
@@ -516,7 +564,7 @@
         <span>&copy; <span id="year">2026</span> WIRCO &ndash; Women-Led Initiative for Resilient Communities. All rights reserved.</span>
         <div class="footer-bottom-links">
           <a href="#">Privacy policy</a>
-          <a href="credits.html">Photo credits</a>
+          <a href="credits/">Photo credits</a>
           <a href="#" class="to-top" aria-label="Back to top"><svg><use href="#i-up"/></svg></a>
         </div>
       </div>
