@@ -151,7 +151,7 @@ html { scroll-padding-top: 110px; }
 .brand img { flex: none; width: 52px; height: 52px; }
 .brand-text { display: inline-flex; flex-direction: column; justify-content: center; align-items: flex-start; }
 .brand-text strong { display: block; font-family: var(--display); font-size: 1.85rem; font-weight: 900; color: var(--navy); line-height: .86; letter-spacing: .03em; transition: color .3s; }
-.brand-text strong em { font-style: normal; text-transform: uppercase; font-size: 1em; color: var(--orange); letter-spacing: .03em; margin-left: 6px; }
+.brand-text strong em { font-style: normal; text-transform: uppercase; font-size: 1em; color: var(--orange); letter-spacing: .03em; margin-left: 0; }
 .brand-text span {
   display: block; margin-top: 6px; white-space: nowrap; line-height: 1;
   font-size: .55rem; color: var(--maroon); font-weight: 700; letter-spacing: .02em; text-transform: uppercase;
