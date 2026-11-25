@@ -120,6 +120,7 @@ p { margin: 0 0 1em; }
   .topbar { font-size: .78rem; }
   .topbar-inner { justify-content: center; }
   .topbar-social { display: none; }
+  .topbar-contact .tb-phone-2 { display: none; }
   .topbar-contact { justify-content: center; gap: 6px 18px; }
 }
 
