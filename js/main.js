@@ -146,7 +146,7 @@
   tag('.section-head');
   tag('.split-block .split-media');                         // photo slides in from its side (direction set below)
   tag('.ticks li, .give-list li, .chips .chip, .faq-item, .filters, .result, .stat, .step');
-  tag('.grid-2 > *, .grid-3 > *, .quote-grid > *, .contact-cards > *, .mv-grid > *');
+  tag('.grid-2 > *, .grid-3 > *, .grid-4 > *, .grid-5 > *, .quote-grid > *, .contact-cards > *, .mv-grid > *');
   tag('.split > div', 'zoom');
 
   // Two-column blocks: text comes from the opposite side to the photo
@@ -163,7 +163,7 @@
     .forEach(el => el.classList.add('img-reveal'));
 
   // 3) Stagger items that sit side by side or in a list
-  const staggerGroups = '.grid-2, .grid-3, .steps, .stat-grid, .results, .quote-grid, .contact-cards, .mv-grid, .ticks, .give-list, .chips, .faq > div:last-child, .split';
+  const staggerGroups = '.grid-2, .grid-3, .grid-4, .grid-5, .steps, .stat-grid, .results, .quote-grid, .contact-cards, .mv-grid, .ticks, .give-list, .chips, .faq > div:last-child, .split';
   document.querySelectorAll(staggerGroups).forEach(group => {
     [...group.children].filter(c => c.classList.contains('reveal')).forEach((child, i) => {
       child.style.setProperty('--d', Math.min(i, 6) * 90 + 'ms');
