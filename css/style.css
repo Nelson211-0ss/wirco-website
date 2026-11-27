@@ -941,3 +941,7 @@ html { scroll-padding-top: 110px; }
   .ph.ph-dark::before { left: 50%; top: 32%; }
   .ph.ph-dark::after { left: 0; top: 32%; }
 }
+
+/* Founder portrait: keep her face in frame in every crop */
+.founder-photo { object-fit: cover; object-position: 50% 22%; }
+.featured .founder-photo { min-height: 420px; }
